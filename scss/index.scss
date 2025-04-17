@@ -1,0 +1,716 @@
+@mixin font($fs, $fw, $ff, $color) {
+    font-size: $fs;
+    font-weight: $fw;
+    font-family: $ff;
+    color: $color;
+}
+
+@mixin button($a, $b, $c, $d , $e , $f) {
+    width: $a;
+    height: $b;
+    background: $c;
+    border-radius: $d;
+    font: $e;
+    color: $f;
+    display: block;
+}
+
+@mixin img($a, $b, $c, $d) {
+    background-image: $a;
+    width: $b;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: $c;
+    height: $d;
+
+}
+
+%display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+$color-text-white: #FFFFFF;
+$color-text-beige: #F9C06A;
+$color-text-brown: #603809;
+$color-text-grey: #707070;
+$color-text-black: #1E1E1E;
+$font-p: 500 14px "Playfair Display";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: white;
+}
+
+.baackgroung_header {
+    @include img(url(../header.png), 100%, cover, 100%);
+
+    header {
+        width: 100%;
+        padding: 20px 40px;
+
+        .header_container {
+            max-width: 1180px;
+            margin: auto;
+            @extend %display;
+
+            h3 {
+                font-family: Clicker Script;
+                font-weight: 400;
+                font-size: 35px;
+                color: $color-text-white;
+
+            }
+
+            nav {
+                @extend %display;
+                gap: 40px;
+
+                p {
+                    font: $font-p;
+                    color: $color-text-white;
+
+                }
+            }
+
+            :nth-child(3) {
+                @extend %display;
+                gap: 35px;
+
+                p {
+                    font: $font-p;
+                    text-decoration: underline;
+                    text-decoration-style: solid;
+                    color: $color-text-white;
+
+                }
+
+                button {
+                    @include button(100px, 48px, $color-text-beige, 24px, $font-p , $color-text-black);
+                    border: 0;
+                    box-shadow: 0px 6px 12px 0px #F9C06A38;
+
+                }
+            }
+            .menu{
+                display: none;
+            }
+        }
+    }
+
+    .preview {
+        padding: 115px 0 95px;
+        width: 100%;
+
+        .container {
+            max-width: 1180px;
+            margin: auto;
+
+            .left {
+                display: flex;
+                flex-direction: column;
+                max-width: 572px;
+
+                .p1 {
+                    font-family: Playfair Display;
+                    font-weight: 500;
+                    font-size: 22px;
+                    color: $color-text-white;
+                }
+
+                h1 {
+                    font-family: Clicker Script;
+                    font-weight: 400;
+                    font-size: 220px;
+                    color: $color-text-white;
+
+                }
+
+                .p2 {
+                    font-family: Playfair Display;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 34px;
+                    color: $color-text-white;
+                    margin-bottom: 20px;
+                }
+
+                button {
+                    @include button(134px, 48px, $color-text-beige, 24px, 700 16px "Playfair Display ", $color-text-black);
+                    border: 0;
+                    box-shadow: 0px 6px 12px 0px #F9C06A38;
+
+                }
+            }
+        }
+    }
+}
+
+main {
+    .section0 {
+        width: 100%;
+        margin: 82px 0;
+
+        .wrapper {
+            max-width: 1180px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 95px;
+
+            .left {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                h3 {
+                    font-family: Playfair Display;
+                    font-weight: 700;
+                    font-size: 54px;
+                    color: $color-text-brown;
+
+                }
+
+                p {
+                    font-family: Playfair Display;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 34px;
+                    color: $color-text-grey;
+                    margin: 30px 0;
+                }
+
+                button {
+                    @include button(134px, 48px, $color-text-beige, 24px, 700 16px "Playfair Display ", $color-text-black);
+                    border: 0;
+                    box-shadow: 0px 6px 12px 0px #F9C06A38;
+
+                }
+            }
+
+            .right {
+                width: 50%;
+
+                img {
+
+                    max-width: 500px;
+                }
+
+            }
+        }
+    }
+
+    .section1 {
+        max-width: 1180px;
+        margin: auto;
+
+        h1 {
+            @include font(54px, 700, Playfair Display, $color-text-brown);
+            text-align: center;
+        }
+
+        .p1 {
+            @include font(20px, 400, Playfair Display, $color-text-grey);
+            text-align: center;
+            margin: 16px 0 32px;
+        }
+
+        .picture {
+            display: flex;
+            justify-content: space-between;
+
+            .element {
+                position: relative;
+                background: #FFF9F1;
+                border: 1px solid #F9C06A6B;
+
+
+                .img {
+                    width: 280px;
+                    height: 222px;
+                }
+
+                h3 {
+                    @include font(22px, 700, Playfair Display, $color-text-brown);
+                    margin-top: 14px;
+                    text-align: center;
+                }
+
+                .p2 {
+                    @include font(16px, 400, Playfair Display, $color-text-black);
+                    margin: 6px 0;
+                    text-align: center;
+                }
+
+                .p3 {
+                    @include font(18px, 700, Playfair Display, $color-text-brown);
+                    margin-bottom: 42px;
+                    text-align: center;
+                }
+
+                button {
+                    @include button(134px, 48px, $color-text-beige, 24px, 700 16px "Playfair Display ", $color-text-black);
+                    position: absolute;
+                    bottom: -25px;
+                    left: 80px;
+                    border-width: 1px;
+                    border: 0;
+                }
+            }
+        }
+    }
+
+    .section2 {
+        max-width: 1180px;
+        margin: auto;
+
+        h1 {
+            @include font(54px, 700, Playfair Display, $color-text-brown);
+            text-align: center;
+            margin-top: 82px;
+        }
+
+        .p1 {
+            @include font(20px, 400, Playfair Display, $color-text-grey);
+            text-align: center;
+            margin: 16px 0 32px;
+        }
+
+        .different {
+            display: flex;
+            justify-content: space-between;
+
+            .element {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: #FFF9F1;
+                border: 1px solid #F9C06A6B;
+                width: 280px;
+                height: 284px;
+                border-width: 1px;
+                padding: 32px;
+
+                &.active {
+                    background: #FFEED8;
+
+                }
+
+                .img {
+                    width: 88px;
+                    height: 88px;
+                }
+
+                h3 {
+                    @include font(28px, 700, Playfair Display, $color-text-brown);
+                    margin: 25px 0 8px;
+                }
+
+                p {
+                    @include font(20px, 400, Playfair Display, $color-text-grey);
+                    text-align: center;
+                }
+            }
+        }
+
+        h4 {
+            @include font(20px, 400, Playfair Display, $color-text-brown);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .p2 {
+            @include font(20px, 400, Playfair Display, $color-text-grey);
+            text-align: center;
+            margin: 32px 0 8px;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            @include button(134px, 48px, $color-text-beige, 24px, 700 16px "Playfair Display ", $color-text-black);
+            border-width: 1px;
+            border: 0;
+        }
+    }
+
+    .section3 {
+
+        background-image: url(../fon.png);
+        width: 100%;
+        margin-bottom: 82px;
+
+        .fon {
+            max-width: 1180px;
+            margin: auto;
+            margin-top: 82px;
+            display: flex;
+            justify-content: space-between;
+            padding: 53px 0;
+
+
+            .left {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                h3 {
+                    @include font(54px, 700, Playfair Display, $color-text-white);
+                }
+
+                p {
+                    @include font(20px, 400, Playfair Display, $color-text-white);
+                    margin: 22px 0;
+                }
+
+                button {
+                    @include button(134px, 48px, $color-text-beige, 24px, 700 16px "Playfair Display ", $color-text-black);
+                    border-width: 1px;
+                    border: 0;
+                }
+            }
+
+            .right {
+                width: 50%;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+
+                img {
+                    max-width: 300px;
+                }
+            }
+        }
+
+    }
+
+    .section4 {
+        max-width: 1180px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            font-family: Playfair Display;
+            font-weight: 700;
+            font-size: 54px;
+            color: $color-text-brown;
+            text-align: center;
+        }
+
+        p {
+            font-family: Playfair Display;
+            font-weight: 400;
+            font-size: 20px;
+            text-align: center;
+            color: $color-text-grey;
+            margin: 16px 0 45px;
+            text-align: center;
+        }
+
+        .rectangle {
+            display: flex;
+            position: relative;
+            margin: auto;
+
+            .left {
+                position: absolute;
+                top: 221px;
+                left: -41px;
+                width: 82px;
+                height: 82px;
+                border-radius: 16px;
+                background: $color-text-beige;
+                box-shadow: 0px 6px 12px 0px #F9C06A38;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1;
+            }
+
+            .center {
+                position: relative;
+                width: 980px;
+                height: 524px;
+                border-width: 1px;
+                background: #FFF9F1;
+                border: 1px solid #F9C06A6B;
+                .text{
+
+                
+
+                h1 {
+                    position: absolute;
+                    top: -40px;
+                    left: 20px;
+                    font-family: Playfair Display;
+                    font-weight: 700;
+                    font-size: 220px;
+                    color: $color-text-brown;
+                }
+
+                .p1 {
+                    position: absolute;
+                    top: 129px;
+                    left: 0;
+                    font-family: Playfair Display;
+                    font-weight: 600;
+                    line-height: 36px;
+                    font-size: 18px;
+                    text-align: center;
+                    color: $color-text-grey;
+                    margin: 0 100px;
+                }
+
+                h4 {
+                    position: absolute;
+                    top: 342px;
+                    left: 385px;
+                    font-family: Playfair Display;
+                    font-weight: 700;
+                    font-size: 32px;
+                    text-align: center;
+                    color: $color-text-brown;
+                }
+
+                .p2 {
+                    position: absolute;
+                    top: 389px;
+                    left: 417px;
+                    font: 400 20px "Playfair Display";
+                    text-align: center;
+                    color: $color-text-grey;
+
+                }
+
+                .img {
+                    position: absolute;
+                    top: 468px;
+                    left: 434px;
+                    display: flex;
+                    justify-content: center;
+
+                    img {
+
+                        width: 112px;
+                        border-radius: 16px;
+                    }
+
+                }
+                }
+            }
+
+            .right {
+                position: absolute;
+                top: 221px;
+                left: 939px;
+                width: 82px;
+                height: 82px;
+                border-radius: 16px;
+                background: $color-text-beige;
+                box-shadow: 0px 6px 12px 0px #F9C06A38;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+    }
+
+    footer {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 138px;
+        position: relative;
+        z-index: 1;
+
+        img {
+            width: 100%;
+            
+        }
+
+        .footer_class {
+            width: 100%;
+            margin: auto;
+            display: flex;
+            position: absolute;
+            top: 400px;
+            background: linear-gradient(#382005, #6f3d04);
+            padding: 162px 93px 93px;
+            gap: 66px;
+
+
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image: url('../fotter_image.png');
+                background-size: cover;
+                background-position: center;
+                opacity: 0.2;
+                z-index: 1;
+            }
+
+            .column_footer {
+                position: relative;
+                z-index: 2;
+
+                h4 {
+                    font: 400 54px "Clicker Script";
+                    color: $color-text-white;
+                }
+
+                .p1 {
+                    font: 400 14px "Playfair Display";
+                    line-height: 22px;
+                    color: $color-text-white;
+                }
+
+                .imgs {
+                    display: flex;
+                    gap: 20px;
+
+                    img {
+                        width: 24px;
+                    }
+                }
+
+                h5 {
+                    font: 700 26px "Playfair Display";
+                    color: $color-text-white;
+                    margin-bottom: 55px;
+                }
+
+                p {
+                    font: 400 18px "Playfair Display";
+                    line-height: 42px;
+                    color: $color-text-white;
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .section3 .fon {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section0 .wrapper {
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .preview .container {
+        padding-left: 30px;
+    }
+
+    .section1 .picture {
+        gap: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section2 .different {
+        gap: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+        @media (max-width: 1000px) {
+           .baackgroung_header {
+header{
+
+
+           .header_container{
+
+            nav{
+                display: none;
+            }
+            :nth-child(3) {
+                display: none;
+            }
+            .menu{
+                display: block;
+            }
+        }
+
+    }
+}
+            .section4 .rectangle .left {
+                visibility: hidden;
+            }
+            .section4 .rectangle .knopka {
+              display: none;
+                
+            }
+            .section4 .rectangle .center {
+                width: 100%;
+                height: 700px;
+                
+                h1{
+                    font-size: 150px;
+                }
+                .p1{
+                    line-height: 20px;
+                    font-size: 15px;
+                }
+            }
+            footer .footer_class{
+                flex-direction: column;
+            }
+            footer img{
+                
+                display: none;
+            }
+        }
+      
+        @media (max-width: 740px){
+            .baackgroung_header .preview .container .left h1{
+                font-size: 150px;
+            }
+            .section0 .wrapper .left{
+                width: 100%;
+            }
+            .section0 .wrapper .right{
+                display: none;
+            }
+            main .section0 .wrapper .left h3{
+                font-size: 42px;
+            }
+            main .section1 h1 {
+                font-size: 42px;
+            }
+            main .section2 h1 {
+                font-size: 42px;
+            }
+            main .section3 .fon .left h3{
+                font-size: 42px;
+            }
+            main .section4 h3{
+                font-size: 42px;
+            }
+        }
