@@ -549,6 +549,7 @@ main .section4 .rectangle .center .text .img {
 }
 main .section4 .rectangle .center .text .img img {
   width: 112px;
+  height: 112px;
   border-radius: 16px;
 }
 main .section4 .rectangle .right {
